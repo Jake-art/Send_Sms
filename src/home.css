@@ -1,0 +1,468 @@
+body {
+    margin: 0;
+    overflow: hidden;
+  }
+  h1 {
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 32px;
+    color:#bfc6c7;
+    margin-bottom: 20px;
+  }
+  
+  .night-sky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(45deg, #001133, #000022);
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 100px;
+    background-color: rgba(196, 188, 196, 0.9); 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+  .card {
+    margin-bottom: 50px;
+    padding: 15px;
+    background-color: #29255e;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  #chatContainer {
+    height: 300px;
+    overflow-y: auto; 
+    scroll-behavior: smooth;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .input-group {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+  }
+  .form-control {
+    flex: 1;
+    margin-right: 10px;
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 16px;
+  }
+  .form-control-a {
+    max-width: 200px;
+    margin-bottom: 10px;
+    flex: 1;
+    margin-right: 10px;
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 16px;
+  }
+  .btn-primary {
+    background-color: #29255e;
+    border-color: #29255e;
+    color: #f3f3f3;
+    min-width: 120px;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+  .btn-primary:hover {
+    background-color: #4d4799;
+    border-color: #4d4799;
+  }
+  
+  .btn-primary:focus,
+  .btn-primary:not(:disabled):not(.disabled):active {
+    background-color:#29255e;
+    border-color:#29255e;
+  }
+  .user-message-container {
+    background-color: #bfc6c7;
+    border-radius: 10px;
+    padding: 10px;
+    display: block;
+    float: right;
+    clear: both;
+    margin-bottom: 10px;
+    text-align: left;
+    align-self: flex-end;
+    margin-left: auto;
+    margin-right: 0;
+    word-wrap: break-word;
+    max-width: 50%;
+  }
+  
+  .response-message {
+    background-color: #5c57ae;
+    border-radius: 10px;
+    padding: 10px;
+    display: block;
+    float: left;
+    clear: both;
+    margin-bottom: 10px;
+    text-align: left;
+    align-self: flex-start;
+    margin-left: 0;
+    margin-right: auto;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    color: white;
+  }
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    color: #ddd9d9;
+    font-size: 14px;
+    border-radius: 5px;
+  }
+  .moon {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background-color: #bfc6c7;
+    border-radius: 50%;
+    top: 20%;
+    left: 80%;
+    animation: moonRise 20s linear infinite;
+    opacity: 0.8;
+  }
+  
+  @keyframes twinkling {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+  }
+  
+  @keyframes moonRise {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20%); }
+  }
+  .shooting-star {
+    position: absolute;
+    width: 50px;
+    height: 1px;
+    background-color: #208fa0;
+    animation: shootingStar 5s linear infinite;
+    opacity: 0;
+  }
+  
+  @keyframes shootingStar {
+    0% {
+      opacity: 1;
+      transform: translate(-10%, -10%) rotate(45deg);
+    }
+    100% {
+      opacity: 0;
+      transform: translate(200%, 200%) rotate(45deg);
+    }
+  }
+  
+  
+  .shooting-star1 {
+    top: 10%;
+    left: 80%;
+    animation-delay: 5s;
+  }
+  
+  .shooting-star2 {
+    top: 40%;
+    left: 10%;
+    animation-delay: 8s;
+  }
+  
+  .shooting-star3 {
+    top: 50%;
+    left: 70%;
+    animation-delay: 12s;
+  }
+  
+
+  
+  @keyframes twinkling {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+  }
+  
+  @keyframes moonRise {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20%); }
+  }
+  .star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background-color: #FFF;
+    border-radius: 50%;
+    animation: twinkling 2s infinite;
+  }
+  
+  .star1 {
+    top: 15%;
+    left: 25%;
+    animation-delay: 0.5s;
+  }
+  
+  .star2 {
+    top: 40%;
+    left: 60%;
+    animation-delay: 2s;
+  }
+  
+  .star3 {
+    top: 70%;
+    left: 80%;
+    animation-delay: 1s;
+  }
+  
+ 
+  .star::before {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background-color: #FFF;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .star4 {
+    width: 3px;
+    height: 3px;
+    top: 10%;
+    left: 15%;
+    animation-delay: 2s;
+  }
+  
+  .star5 {
+    width: 1px;
+    height: 1px;
+    top: 80%;
+    left: 70%;
+    animation-delay: 4s;
+  }
+  .star6 {
+    width: 1px;
+    height: 1px;
+    top: 50%;
+    left: 60%;
+    animation-delay: 2s;
+  }
+  .star7 {
+    width: 1px;
+    height: 1px;
+    top: 80%;
+    left: 70%;
+    animation-delay: 4s;
+  }
+  .star8 {
+    width: 1px;
+    height: 1px;
+    top: 50%;
+    left: 60%;
+    animation-delay: 2s;
+  }
+  
+  .star9 {
+    width: 2px;
+    height: 2px;
+    top: 90%;
+    left: 25%;
+    animation-delay: 3.5s;
+  }
+  
+  .star10 {
+    width: 2px;
+    height: 2px;
+    top: 20%;
+    left: 40%;
+    animation-delay: 2.8s;
+  }
+  .star11 {
+    width: 2px;
+    height: 2px;
+    top: 75%;
+    left: 80%;
+    background-color: #FFD700; 
+    animation-delay: 3.2s;
+  }
+  
+  .star12 {
+    width: 2px;
+    height: 2px;
+    top: 35%;
+    left: 70%;
+    background-color: #00FF00;
+    animation-delay: 3.8s;
+  }
+  
+  .star13 {
+    width: 3px;
+    height: 3px;
+    top: 50%;
+    left: 45%;
+    background-color: #FF4500; 
+    animation-delay: 2s;
+  }
+  
+  .star14 {
+    width: 1px;
+    height: 1px;
+    top: 25%;
+    left: 30%;
+    background-color: #FF1493;
+    animation-delay: 3.1s;
+  }
+  
+  .star15 {
+    width: 1px;
+    height: 1px;
+    top: 85%;
+    left: 50%;
+    background-color: #9400D3; 
+    animation-delay: 3s;
+  }
+  .star16 {
+    width: 2px;
+    height: 2px;
+    top: 60%;
+    left: 75%;
+    background-color: #00FFFF;
+    animation-delay: 2s;
+  }
+  
+  .star17 {
+    width: 2px;
+    height: 2px;
+    top: 75%;
+    left: 50%;
+    background-color: #FF6347; 
+    animation-delay: 3s;
+  }
+  
+  .star18 {
+    width: 3px;
+    height: 3px;
+    top: 30%;
+    left: 55%;
+    background-color: #00FF7F; 
+    animation-delay: 3s;
+  }
+  
+  .star19 {
+    width: 1px;
+    height: 1px;
+    top: 60%;
+    left: 30%;
+    background-color: #FFD700; 
+    animation-delay: 4s;
+  }
+  
+  .star20 {
+    width: 1px;
+    height: 1px;
+    top: 80%;
+    left: 85%;
+    background-color: #FF1493; 
+    animation-delay: 3s;
+  }
+  .star21 {
+    width: 3px;
+    height: 3px;
+    top: 35%;
+    left: 70%;
+    background-color: #FF69B4; 
+    animation-delay: 2s;
+  }
+  
+  .star22 {
+    width: 2px;
+    height: 2px;
+    top: 45%;
+    left: 30%;
+    background-color: #00CED1; 
+    animation-delay: 3.7s;
+  }
+  
+  .star23 {
+    width: 3px;
+    height: 3px;
+    top: 55%;
+    left: 80%;
+    background-color: #FFD700; 
+    animation-delay: 4.1s;
+  }
+  
+  .star24 {
+    width: 1px;
+    height: 1px;
+    top: 60%;
+    left: 50%;
+    background-color: #FF4500; 
+    animation-delay: 3.9s;
+  }
+  
+  .star25 {
+    width: 2px;
+    height: 2px;
+    top: 85%;
+    left: 15%;
+    background-color: #EE82EE; 
+    animation-delay: 4.5s;
+  }
+  .star26 {
+    width: 1px;
+    height: 1px;
+    top: 35%;
+    left: 70%;
+    background-color: #FF69B4; 
+    animation-delay: 4.2s;
+  }
+  
+  .star27 {
+    width: 2px;
+    height: 2px;
+    top: 45%;
+    left: 30%;
+    background-color: #00CED1; 
+    animation-delay: 3.7s;
+  }
+  
+  .star28 {
+    width: 3px;
+    height: 3px;
+    top: 55%;
+    left: 80%;
+    background-color: #FFD700; 
+    animation-delay: 4.1s;
+  }
+  
+  .star29 {
+    width: 1px;
+    height: 1px;
+    top: 10%;
+    left: 75%;
+    animation-delay: 4.6s;
+  }
+  
+  
+  .star30 {
+    width: 2px;
+    height: 2px;
+    top: 20%;
+    left: 90%;
+    animation-delay: 5s;
+  }
+  
+
